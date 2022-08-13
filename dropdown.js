@@ -116,4 +116,16 @@ function handleInputElt(evt){
 
     filtered.removeChild(filtered.querySelector(`.${evt.target.getAttribute('id')}`));
   }
+  let closeElt = document.querySelectorAll('.close');
+  for (let index = 0; index < closeElt.length; index++) {
+    closeElt[index].addEventListener("click", handleCloseElt);
+  }
+}
+
+function handleCloseElt(evt){
+  let parentElt = document.getElementById(evt.target.parentElement.classList[1]);
+  if (parentElt.checked == true) {
+    parentElt.checked = false;
+  }
+  evt.target.parentElement.remove();
 }

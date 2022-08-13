@@ -156,6 +156,10 @@ main {
     margin-bottom: 0rem;
 }
 
+.close{
+    cursor: pointer;
+}
+
 .filtered{
     display: flex;
     flex-direction: row;
