@@ -159,11 +159,12 @@ main {
 .filtered{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 1rem;
     font-weight: bold;
     border-radius: 5em;
-    height: 2.2rem;
+
     vertical-align: auto;
     margin-bottom: 1rem;
 }

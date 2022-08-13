@@ -101,19 +101,19 @@ for (let index = 0; index < inputElt.length; index++) {
 };
 
 function handleInputElt(evt){
-  console.log(evt.target);
   const backend = document.getElementById('backend');
+  const filtered = document.querySelector('.filtered');
 
-  let inputElt = document.querySelectorAll('input');
-for (let index = 0; index < inputElt.length; index++) {
-  if (inputElt[index].checked == true) {
-    console.log(inputElt[index]);
+  if (evt.target.checked == true) {
+    const filterTpl = document.getElementById('filter-template').content.cloneNode(true);
+    const container =  filterTpl.querySelector('.filtered-content');
 
+    container.classList.add(evt.target.getAttribute('id'));
+    filterTpl.querySelector('.filtered-content p').textContent = evt.target.name;
+    filtered.append(filterTpl);
+  };
+  if (evt.target.checked == false) {
 
-
-    
+    filtered.removeChild(filtered.querySelector(`.${evt.target.getAttribute('id')}`));
   }
-  
-};
-
 }
