@@ -165,16 +165,28 @@
                 </div>
             </div>
 
-            
+
             <div class="filter-by">
                 <p>Trier par :</p>
                 <div class="dropdown">
-                    <button onclick="dropDate()" class="dropBtnDate drop-btn-date">Date</button>
+                    <div onclick="dropDate()" class="drop-btn-date">
+                        <p class="dropBtnDate drop-btn-date">Date</p>
+                        <svg  class="dropBtnDate drop-btn-date-picture" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.58328 10.583C6.36077 9.80559 7.6213 9.80575 8.39891 10.583L16 18.1845L23.601 10.5834C24.3786 9.80613 25.639 9.80587 26.4165 10.5832C27.1945 11.3607 27.1945 12.6218 26.4165 13.3994L17.4075 22.4086C17.0188 22.797 16.5084 22.9912 16 22.9912C15.4912 22.9912 14.9807 22.7964 14.5923 22.4082L5.58321 13.399C4.80561 12.6214 4.80556 11.3605 5.58328 10.583Z" fill="#0E0E2C"/>
+                        </svg>
+                    </div>
                     <div id="dropdown-date" class="dropdown-content-date">
                         <a href="#">Date</a>
                         <a href="#">Salaire</a>
                     </div>
                 </div>
+
+                <label for="filter-select">Trier par:</label>
+
+                <select name="filter-by" id="filter-select">
+                    <option value="Date">Date</option>
+                    <option value="Salaire">Salaire</option>
+                </select>
             </div>
         </div>
         <div class="filtered">
@@ -182,6 +194,14 @@
         </div>
 
         <!--         <div class="lower-card"> -->
+        
+        <div class="cards-container">
+
+        </div>
+
+
+
+
 
         <div class="lower-card-container">
             <div class="left-container">
@@ -319,6 +339,38 @@
         </div>
     </template>
 
+    <template id="lower-card">
+        <div class="lower-card-container">
+            <div class="left-container">
+                <div class="letter-content">
+
+                    <p class="lower-card-letter">T</p>
+                </div>
+
+                <div class="card">
+                    <div class="job-info">
+                        <p class="job-info-label">Dev Fullstack</p>
+                        <button class="job-info-button">
+                            Télétravail partiel
+                        </button>
+                    </div>
+                    <div class="job-info-location">
+                        <p>Tiktok - Paris</p>
+                        <div class="line"></div>
+                        <p class="ctType">CDI</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="right-content">
+                <p>Salaire</p>
+
+                <p>
+                    Il y a 4 jours
+                </p>
+            </div>
+        </div>
+    </template>
 
 
 
@@ -326,6 +378,7 @@
 
 
     <script src="dropdown.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

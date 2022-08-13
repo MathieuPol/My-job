@@ -4,15 +4,18 @@ fetch("./data.json")
 })
 .then(
     function(data) {
-        console.log(data[0]['uuid'])
-        let html = "";
-        data.forEach(function(item) {
-            html += `<div class="item">
-                        <h2>${item.title}</h2>
-                        <p>${item.description}</p>
-                        <img src="${item.image}">
-                    </div>`;
-        });
+        for (const iterator of data) {
+            if (iterator.isActive == true) {
+                console.log(iterator.contractType);
+
+                const lowerCard = document.getElementById('lower-card').content.cloneNode(true);
+                lowerCard.querySelector('.ctType').textContent = iterator.contractType;
+                console.log(lowerCard);
+                let container = document.querySelector('.cards-container');
+                container.appendChild(lowerCard);
+                //ocument.querySelector('.card-container').append(lowerCard);
+            }
+        }
 
     }
     /* jsondata => console.log(jsondata) */
