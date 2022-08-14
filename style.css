@@ -91,7 +91,6 @@ li {
 }
 
 main {
-
         margin-left: 18%;
         display: flex;
         flex-direction: column;
@@ -635,4 +634,8 @@ main {
 .sub-content-left-requirement{
     display: flex;
     margin-right: 2rem;
+}
+
+.hide{
+    display: none;
 }
