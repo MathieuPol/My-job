@@ -10,13 +10,13 @@ fetch("./data.json")
     function(data) {
         for (const iterator of data) {
             if (iterator.isActive == true) {
-                console.log(iterator);
+                //console.log(iterator);
                 const lowerCard = document.getElementById('lower-card').content.cloneNode(true);
 //********************************************************************************************* */
 //*Used to replace data in the html template with the data from the json file
 //********************************************************************************************* */
             if (iterator.jobTitle == 'manager'){
-                lowerCard.querySelector('.job-info-label').textContent = 'Projet / Product Management';
+                lowerCard.querySelector('.job-info-label').textContent = 'Project / Product Management';
             }else{
                 lowerCard.querySelector('.job-info-label').textContent = 'Dev ' + iterator.jobTitle.charAt(0).toUpperCase() + iterator.jobTitle.slice(1);
             }
