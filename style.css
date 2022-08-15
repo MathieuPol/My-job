@@ -290,7 +290,7 @@ main {
     display: inline-block;
 }
 
-.description {
+.card-description {
     margin-right: 2rem;
     margin-left: 1rem;
 }
@@ -527,6 +527,15 @@ main {
 }
 
 .lower-card-letter {
+    margin-bottom: 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 44.57px;
+    color: #7650E0;
+}
+
+.card-letter {
     margin-bottom: 0;
     text-align: center;
     font-weight: 600;
