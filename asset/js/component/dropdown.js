@@ -142,9 +142,8 @@ function handleInputElt(evt){
       posteFilter.push(test);
     }
   }
-  console.log(modeFilter);
-  console.log(contractFilter);
-  console.log(posteFilter);
+
+  
 //*-------------------------
 //*I Setup an aiguilleur to filter the data  
 //*-------------------------
@@ -274,9 +273,7 @@ function handleCloseElt(evt){
       posteFilter.push(test);
     }
   }
-  console.log(modeFilter);
-  console.log(contractFilter);
-  console.log(posteFilter);
+
 //*-------------------------
 //*I Setup an aiguilleur to filter the data
 //*-------------------------

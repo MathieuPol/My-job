@@ -1,8 +1,8 @@
 //With this method I load json data and display only the active one
+const dataLoad = {
 
-
-
-fetch("./data.json")
+    loadData : function(){
+fetch("asset/data/data.json")
 .then(response => {
    return response.json();
 })
@@ -86,7 +86,6 @@ fetch("./data.json")
             const month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
             lowerCard.querySelector('.card-begin-date').textContent = 'Début: ' + month[startDate.getMonth()] + ' ' + startDate.getFullYear();
             
-            console.log(iterator);
             // job description
             lowerCard.querySelector('.card-description').textContent = iterator.about;
 
@@ -105,12 +104,9 @@ fetch("./data.json")
                 lowerCard.querySelector('.card-study-requirement').textContent = 'Bac + 5';
             }
 
+            console.log(iterator);
+                lowerCard.querySelector('.try-it').setAttribute('href', "mailto:" + iterator.applyMail);
 
-
-/*             bac in level:
-            Bac  level 6 = Bac + 3
-            Bac  level 7 = Bac + 5
-            Bac  level 8 = Bac + 8 */
 
 
 
@@ -121,5 +117,32 @@ fetch("./data.json")
             }
         }
     }
-    /* jsondata => console.log(jsondata) */
-    );
+    ).then
+    (
+        function(){
+            const allLowerCard = document.querySelectorAll('.lower-card-content');
+            allLowerCard.forEach(element => {
+                element.addEventListener('click', function(){
+                    element.classList.toggle('hide');
+                    console.log(element.parentNode);
+                    const parentElement = element.parentNode;
+                    parentElement.querySelector('.deployed-card').classList.toggle('hide');
+                });
+            });
+
+            const allDeployedCard = document.querySelectorAll('.deployed-card');
+            allDeployedCard.forEach(element => {
+
+                element.querySelector('.undeploy-button').addEventListener('click', function(){
+                    element.classList.toggle('hide');
+                    const parentElement = element.parentNode;
+                    parentElement.querySelector('.lower-card-content').classList.toggle('hide');
+                });
+            });
+
+
+        }
+    )
+
+}
+}

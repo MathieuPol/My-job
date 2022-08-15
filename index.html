@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reboot.css">
+    <link rel="stylesheet" href="asset/css/reboot.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="asset/css/style.css">
 
     <title>Document</title>
 </head>
@@ -304,38 +304,39 @@
     </template>
 
     <template id="lower-card">
+
         <div class="lower-card-container">
-            <div class="left-container">
-                <div class="letter-content">
+            <div class="lower-card-content">
 
-                    <p class="lower-card-letter">T</p>
-                </div>
+                <div class="left-container">
+                    <div class="letter-content">
 
-                <div class="card">
-                    <div class="job-info">
-                        <p class="job-info-label">Dev Fullstack</p>
-                        <button class="job-info-button">
-                            Télétravail partiel
-                        </button>
-                    </div>
-                    <div class="job-info-location">
-                        <p class="compagny">Tiktok - Paris</p>
-                        <div class="line"></div>
-                        <p class="ctType">CDI</p>
+                        <p class="lower-card-letter">T</p>
                     </div>
 
+                    <div class="card">
+                        <div class="job-info">
+                            <p class="job-info-label">Dev Fullstack</p>
+                            <button class="job-info-button">
+                                Télétravail partiel
+                            </button>
+                        </div>
+                        <div class="job-info-location">
+                            <p class="compagny">Tiktok - Paris</p>
+                            <div class="line"></div>
+                            <p class="ctType">CDI</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="right-content">
+                    <p class="salary">Salaire</p>
+
+                    <p class="published-since">
+                        Il y a 4 jours
+                    </p>
                 </div>
             </div>
-            <div class="right-content">
-                <p class="salary">Salaire</p>
-
-                <p class="published-since">
-                    Il y a 4 jours
-                </p>
-            </div>
-        </div>
-
-
 
 
         <div class="deployed-card hide">
@@ -424,19 +425,14 @@
                 molestiae atque tempore totam architecto corporis eveniet eum.</p>
             <div class="btn-container">
 
-                <button class="try-it">Postuler</button>
+                <a class="try-it" href="mailto:">Postuler</a>
+ <!--                <button class="try-it">Postuler</button> -->
             </div>
         </div>
 
 
 
-
-
-
-
-
-
-
+    </div>
 
 
 
@@ -455,9 +451,11 @@
 
 
 
+    <script src="asset/js/component/app.js"></script>
+    <script src="asset/js/component/dropdown.js"></script>
+    <script src="asset/js/init.js"></script>
+    <script src="asset/js/component/card_deployment.js"></script>
 
-    <script src="dropdown.js"></script>
-    <script src="app.js"></script>
 </body>
 
 </html>
