@@ -146,77 +146,11 @@ function handleInputElt(evt){
   console.log(contractFilter);
   console.log(posteFilter);
 //*-------------------------
-//*I Setup an aiguilleur to filter the data
+//*I Setup an aiguilleur to filter the data  
 //*-------------------------
 const allLowerCard = document.querySelectorAll('.lower-card-container');
 
-  if (modeFilter.length > 0 && contractFilter.length > 0 && posteFilter.length > 0) {
-    for (const card of allLowerCard) {
-      card.style.display = 'none';
-      for(const modeIterator of modeFilter){
-        if(card.querySelector('.job-info-button').textContent == modeIterator.querySelector('.working-mode p').textContent){
-          for(const contractIterator of contractFilter){
-            if(card.querySelector('.ctType').textContent == contractIterator.querySelector('.working-duration p').textContent){
-              for (const postIterator of posteFilter) {
-                if(card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent){
-                  card.style.display = 'flex';
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  if (contractFilter.length > 0 && posteFilter.length > 0) {
-    for (const card of allLowerCard) {
-      card.style.display = 'none';
-      for(const contractIterator of contractFilter){
-        if(card.querySelector('.ctType').textContent == contractIterator.querySelector('.working-duration p').textContent){
-          for (const postIterator of posteFilter) {
-            if(card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent){
-              card.style.display = 'flex';
-            }
-          }
-        }
-      }
-    }
-  }
-
-  if (modeFilter.length > 0 && posteFilter.length > 0) {
-    for (const card of allLowerCard) {
-      card.style.display = 'none';
-      for(const modeIterator of modeFilter){
-        if(card.querySelector('.job-info-button').textContent == modeIterator.querySelector('.working-mode p').textContent){
-          for (const postIterator of posteFilter) {
-            if(card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent){
-              card.style.display = 'flex';
-            }
-          }
-        }
-      }
-    }
-
-
-  }
-
-  if (modeFilter.length > 0 && contractFilter.length > 0) {
-    for (const card of allLowerCard) {
-      card.style.display = 'none';
-      for(const modeIterator of modeFilter){
-        if(card.querySelector('.job-info-button').textContent == modeIterator.querySelector('.working-mode p').textContent){
-          for(const contractIterator of contractFilter){
-            if(card.querySelector('.ctType').textContent == contractIterator.querySelector('.working-duration p').textContent){
-              card.style.display = 'flex';
-            }
-          }
-        }
-      }
-    }
-  }
-
-  if (modeFilter.length > 0) {
+if (modeFilter.length > 0) {
     for (const card of allLowerCard) {
       card.style.display = 'none';
       for(const modeIterator of modeFilter){
@@ -226,7 +160,7 @@ const allLowerCard = document.querySelectorAll('.lower-card-container');
       }
     }
   }
-
+  
   if (contractFilter.length > 0) {
     for (const card of allLowerCard) {
       card.style.display = 'none';
@@ -237,13 +171,78 @@ const allLowerCard = document.querySelectorAll('.lower-card-container');
       }
     }
   }
-
+  
   if (posteFilter.length > 0) {
     for (const card of allLowerCard) {
       card.style.display = 'none';
       for (const postIterator of posteFilter) {
         if(card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent){
           card.style.display = 'flex';
+        }
+      }
+    }
+  }
+
+  if (contractFilter.length > 0 && posteFilter.length > 0) {
+    for (const card of allLowerCard) {
+      card.style.display = 'none';
+      for(const contractIterator of contractFilter){
+          if(card.querySelector('.ctType').textContent == contractIterator.querySelector('.working-duration p').textContent){
+            for (const postIterator of posteFilter) {
+              if(card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent){
+                card.style.display = 'flex';
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    if (modeFilter.length > 0 && posteFilter.length > 0) {
+      for (const card of allLowerCard) {
+        card.style.display = 'none';
+        for(const modeIterator of modeFilter){
+          if(card.querySelector('.job-info-button').textContent == modeIterator.querySelector('.working-mode p').textContent){
+            for (const postIterator of posteFilter) {
+              if(card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent){
+                card.style.display = 'flex';
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    if (modeFilter.length > 0 && contractFilter.length > 0) {
+      for (const card of allLowerCard) {
+        card.style.display = 'none';
+        for(const modeIterator of modeFilter){
+          if(card.querySelector('.job-info-button').textContent == modeIterator.querySelector('.working-mode p').textContent){
+            for(const contractIterator of contractFilter){
+              if(card.querySelector('.ctType').textContent == contractIterator.querySelector('.working-duration p').textContent){
+                card.style.display = 'flex';
+              }
+            }
+          }
+        }
+      }
+    }
+
+  if (modeFilter.length > 0 && contractFilter.length > 0 && posteFilter.length > 0) {
+    for (const card of allLowerCard) {
+      card.style.display = 'none';
+      for(const modeIterator of modeFilter){
+        if(card.querySelector('.job-info-button').textContent == modeIterator.querySelector('.working-mode p').textContent){
+          for(const contractIterator of contractFilter){
+            if(card.querySelector('.ctType').textContent == contractIterator.querySelector('.working-duration p').textContent){
+              for (const postIterator of posteFilter) {
+                if(card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent){
+                  console.log("ok");
+                  card.style.display = 'flex';
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -256,14 +255,14 @@ function handleCloseElt(evt){
     parentElt.checked = false;
   }
   evt.target.parentElement.remove();
-
+  
   const allFilter = document.querySelectorAll('.filtered-content');
-
+  
   let modeFilter  = [];
   let contractFilter = [];
   let posteFilter = [];
-
-
+  
+  
   for (const test of allFilter) {
     if (test.classList.contains('working-mode')) {
       modeFilter.push(test);
@@ -286,7 +285,88 @@ const allLowerCard = document.querySelectorAll('.lower-card-container');
     cardlower.style.display = 'flex';
   }
 
-
+  if (modeFilter.length > 0) {
+    for (const card of allLowerCard) {
+      card.style.display = 'none';
+      for(const modeIterator of modeFilter){
+        if(card.querySelector('.job-info-button').textContent == modeIterator.querySelector('.working-mode p').textContent){
+          card.style.display = 'flex';
+        }
+      }
+    }
+  }
+  
+  if (contractFilter.length > 0) {
+    for (const card of allLowerCard) {
+      card.style.display = 'none';
+      for(const contractIterator of contractFilter){
+        if(card.querySelector('.ctType').textContent == contractIterator.querySelector('.working-duration p').textContent){
+          card.style.display = 'flex';
+        }
+      }
+    }
+  }
+  
+  if (posteFilter.length > 0) {
+    for (const card of allLowerCard) {
+      card.style.display = 'none';
+      for (const postIterator of posteFilter) {
+        if(card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent){
+          card.style.display = 'flex';
+        }
+      }
+    }
+  }
+  
+  
+    
+    if (contractFilter.length > 0 && posteFilter.length > 0) {
+      for (const card of allLowerCard) {
+        card.style.display = 'none';
+        for(const contractIterator of contractFilter){
+          if(card.querySelector('.ctType').textContent == contractIterator.querySelector('.working-duration p').textContent){
+            for (const postIterator of posteFilter) {
+              if(card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent){
+                card.style.display = 'flex';
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    if (modeFilter.length > 0 && posteFilter.length > 0) {
+      for (const card of allLowerCard) {
+        card.style.display = 'none';
+        for(const modeIterator of modeFilter){
+          if(card.querySelector('.job-info-button').textContent == modeIterator.querySelector('.working-mode p').textContent){
+            for (const postIterator of posteFilter) {
+              if(card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent){
+                card.style.display = 'flex';
+              }
+            }
+          }
+        }
+      }
+      
+      
+    }
+  
+    if (modeFilter.length > 0 && contractFilter.length > 0) {
+      for (const card of allLowerCard) {
+        card.style.display = 'none';
+        for(const modeIterator of modeFilter){
+          if(card.querySelector('.job-info-button').textContent == modeIterator.querySelector('.working-mode p').textContent){
+            for(const contractIterator of contractFilter){
+              if(card.querySelector('.ctType').textContent == contractIterator.querySelector('.working-duration p').textContent){
+                card.style.display = 'flex';
+              }
+            }
+          }
+        }
+      }
+    }
+    
   if (modeFilter.length > 0 && contractFilter.length > 0 && posteFilter.length > 0) {
     for (const card of allLowerCard) {
       card.style.display = 'none';
@@ -305,89 +385,4 @@ const allLowerCard = document.querySelectorAll('.lower-card-container');
       }
     }
   }
-
-  if (contractFilter.length > 0 && posteFilter.length > 0) {
-    for (const card of allLowerCard) {
-      card.style.display = 'none';
-      for(const contractIterator of contractFilter){
-        if(card.querySelector('.ctType').textContent == contractIterator.querySelector('.working-duration p').textContent){
-          for (const postIterator of posteFilter) {
-            if(card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent){
-              card.style.display = 'flex';
-            }
-          }
-        }
-      }
-    }
-  }
-
-  if (modeFilter.length > 0 && posteFilter.length > 0) {
-    for (const card of allLowerCard) {
-      card.style.display = 'none';
-      for(const modeIterator of modeFilter){
-        if(card.querySelector('.job-info-button').textContent == modeIterator.querySelector('.working-mode p').textContent){
-          for (const postIterator of posteFilter) {
-            if(card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent){
-              card.style.display = 'flex';
-            }
-          }
-        }
-      }
-    }
-
-
-  }
-
-  if (modeFilter.length > 0 && contractFilter.length > 0) {
-    for (const card of allLowerCard) {
-      card.style.display = 'none';
-      for(const modeIterator of modeFilter){
-        if(card.querySelector('.job-info-button').textContent == modeIterator.querySelector('.working-mode p').textContent){
-          for(const contractIterator of contractFilter){
-            if(card.querySelector('.ctType').textContent == contractIterator.querySelector('.working-duration p').textContent){
-              card.style.display = 'flex';
-            }
-          }
-        }
-      }
-    }
-  }
-
-  if (modeFilter.length > 0) {
-    for (const card of allLowerCard) {
-      card.style.display = 'none';
-      for(const modeIterator of modeFilter){
-        if(card.querySelector('.job-info-button').textContent == modeIterator.querySelector('.working-mode p').textContent){
-          card.style.display = 'flex';
-        }
-      }
-    }
-  }
-
-  if (contractFilter.length > 0) {
-    for (const card of allLowerCard) {
-      card.style.display = 'none';
-      for(const contractIterator of contractFilter){
-        if(card.querySelector('.ctType').textContent == contractIterator.querySelector('.working-duration p').textContent){
-          card.style.display = 'flex';
-        }
-      }
-    }
-  }
-
-  if (posteFilter.length > 0) {
-    for (const card of allLowerCard) {
-      card.style.display = 'none';
-      for (const postIterator of posteFilter) {
-        if(card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent){
-          card.style.display = 'flex';
-        }
-      }
-    }
-  }
-
-
-
-
-
 }
