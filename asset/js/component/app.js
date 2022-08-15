@@ -8,9 +8,10 @@ fetch("asset/data/data.json")
 })
 .then(
     function(data) {
+
+        console.log(data);
         for (const iterator of data) {
             if (iterator.isActive == true) {
-                //console.log(iterator);
                 const lowerCard = document.getElementById('lower-card').content.cloneNode(true);
 //********************************************************************************************* */
 //*Used to replace data in the html template with the data from the json file
@@ -104,8 +105,7 @@ fetch("asset/data/data.json")
                 lowerCard.querySelector('.card-study-requirement').textContent = 'Bac + 5';
             }
 
-            console.log(iterator);
-                lowerCard.querySelector('.try-it').setAttribute('href', "mailto:" + iterator.applyMail);
+            lowerCard.querySelector('.try-it').setAttribute('href', "mailto:" + iterator.applyMail);
 
 
 
@@ -124,7 +124,6 @@ fetch("asset/data/data.json")
             allLowerCard.forEach(element => {
                 element.addEventListener('click', function(){
                     element.classList.toggle('hide');
-                    console.log(element.parentNode);
                     const parentElement = element.parentNode;
                     parentElement.querySelector('.deployed-card').classList.toggle('hide');
                 });
