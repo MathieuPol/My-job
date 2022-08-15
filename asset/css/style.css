@@ -453,7 +453,12 @@ main {
     display: block;
 }
 
-.drop-btn-date {
+.filter-by label{
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+#filter-select{
     display: flex;
     color: #7650E0;
     background-color: transparent;
@@ -466,6 +471,11 @@ main {
     font-weight: bold;
     padding: 0.4rem 1rem 0.4rem 0rem;
 }
+
+#filter-select option{
+    color: black;
+}
+
 
 .dropdown-content-date {
     display: none;

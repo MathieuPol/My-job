@@ -118,7 +118,14 @@ function handleInputElt(evt){
   };
   if (evt.target.checked == false) {
 
-    filtered.removeChild(filtered.querySelector(`.${evt.target.getAttribute('id')}`));
+    console.log(evt.target.classList[0]);
+    filtered.querySelector(`.${evt.target.getAttribute('id')}`).remove();
+    
+    const allLowerCard = document.querySelectorAll('.lower-card-container');
+    for (const card of allLowerCard) {
+      card.style.display = 'flex';
+    }
+
   }
   let closeElt = document.querySelectorAll('.close');
   for (let index = 0; index < closeElt.length; index++) {
@@ -131,6 +138,7 @@ function handleInputElt(evt){
   let contractFilter = [];
   let posteFilter = [];
 
+
   for (const test of allFilter) {
     if (test.classList.contains('working-mode')) {
       modeFilter.push(test);
@@ -142,6 +150,10 @@ function handleInputElt(evt){
       posteFilter.push(test);
     }
   }
+
+  console.log(modeFilter);
+  console.log(contractFilter);
+  console.log(posteFilter);
 
   
 //*-------------------------

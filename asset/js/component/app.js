@@ -9,7 +9,12 @@ fetch("asset/data/data.json")
 .then(
     function(data) {
 
-        console.log(data);
+        function sortByDate(a, b) {
+            return new Date(b.publishDate) - new Date(a.publishDate);
+        }
+        data.sort(sortByDate);
+
+
         for (const iterator of data) {
             if (iterator.isActive == true) {
                 const lowerCard = document.getElementById('lower-card').content.cloneNode(true);
