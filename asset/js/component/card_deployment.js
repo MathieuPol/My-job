@@ -1,74 +1,77 @@
 const deploy = {
     init: function () {
+        deploy.filterBy();
         deploy.deploy();
     },
 
     deploy: function () {
-        const selectElt = document.querySelector('#filter-select');
+        const selectElt = document.querySelector('#current-filter');
 
-        selectElt.addEventListener('change', (event) => {
-            document.querySelector('.cards-container').innerHTML = '';
+        document.querySelector('.cards-container').innerHTML = '';
+        
+        fetch("asset/data/data.json")
+        .then(response => {
+            return response.json();
+        })
+        .then(
+            function(data) {
+                
+                if(document.querySelector('#current-filter').textContent == 'Date'){
+                    
 
-            fetch("asset/data/data.json")
-                .then(response => {
-                return response.json();
-                })
-                .then(
-                    function(data) {
-
-                        if(event.target.value == 'Date'){
-                        function sortByDate(a, b) {
+                    function sortByDate(a, b) {
                             return new Date(b.publishDate) - new Date(a.publishDate);
                         }
                         data.sort(sortByDate);
-                        }
-                        if(event.target.value == 'Salaire'){
+                    }
+                    if(document.querySelector('#current-filter').textContent == 'Salaire'){
+
                         function sortBySalary(a, b) {
                             return b.salary - a.salary;
                         }
                         data.sort(sortBySalary);
-                        }
-
-
-                        for (const iterator of data) {
-                            if (iterator.isActive == true) {
-                                const lowerCard = document.getElementById('lower-card').content.cloneNode(true);
-                //********************************************************************************************* */
-                //*Used to replace data in the html template with the data from the json file
-                //********************************************************************************************* */
+                    }
+                    
+                    
+                    for (const iterator of data) {
+                        if (iterator.isActive == true) {
+                            const lowerCard = document.getElementById('lower-card').content.cloneNode(true);
+                            //********************************************************************************************* */
+                            //*Used to replace data in the html template with the data from the json file
+                            //********************************************************************************************* */
                             // Job label
                             if (iterator.jobTitle == 'manager'){
                                 lowerCard.querySelector('.job-info-label').textContent = 'Project / Product Management';
                                 lowerCard.querySelector('.card-job-info-label').textContent = 'Project / Product Management';
-                
+                                
                             }else{
                                 lowerCard.querySelector('.job-info-label').textContent = 'Dev ' + iterator.jobTitle.charAt(0).toUpperCase() + iterator.jobTitle.slice(1);
                                 lowerCard.querySelector('.card-job-info-label').textContent = 'Dev ' + iterator.jobTitle.charAt(0).toUpperCase() + iterator.jobTitle.slice(1);
                             }
-                
+                            
                             // compagny letter
                             lowerCard.querySelector('.lower-card-letter').textContent = iterator.company.charAt(0).toUpperCase();
                             lowerCard.querySelector('.card-letter').textContent = iterator.company.charAt(0).toUpperCase();
-                
+                            
                             // release date
                             releaseDate = new Date(iterator.publishDate);
                             currentDate = new Date();
                             difference = currentDate - releaseDate;
                             days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                
+                            
                             lowerCard.querySelector('.published-since').textContent = 'Il y a ' + days +  ' jours';
                             lowerCard.querySelector('.card-published-date').textContent = 'Il y a ' + days +  ' jours';
-                
+                            
                             // company name + city
                             lowerCard.querySelector('.compagny').textContent = iterator.company.charAt(0) + iterator.company.slice(1).toLowerCase() + ' - ' + iterator.city;
                             lowerCard.querySelector('.card-compagny').textContent = iterator.company.charAt(0) + iterator.company.slice(1).toLowerCase() + ' - ' + iterator.city;
-                
-                
+                            
+                            
                             // salary
                             const salaryInEuro = new Intl.NumberFormat(iterator.currency , { style: 'currency', currency: 'EUR' }).format(( Math.round(iterator.salary * 261 / 1000)));
                             lowerCard.querySelector('.salary').textContent = salaryInEuro.split(',')[0] + 'K';
                             lowerCard.querySelector('.card-salary').textContent = salaryInEuro.split(',')[0] + 'K';
-                
+                            
                             // job mode
                             if(iterator.remoteWork !== 'none'){
                                 if(iterator.remoteWork == 'full'){
@@ -77,31 +80,31 @@ const deploy = {
                                 }else if(iterator.remoteWork == 'regularly'){
                                     lowerCard.querySelector('.job-info-button').textContent = 'Télétravail partiel';
                                     lowerCard.querySelector('.card-job-info-button').textContent = 'Télétravail partiel';
-                
+                                    
                                 }else if(iterator.remoteWork == 'eventually'){
                                     lowerCard.querySelector('.job-info-button').textContent = 'Télétravail ponctuel';
                                     lowerCard.querySelector('.card-job-info-button').textContent = 'Télétravail ponctuel';
-                
+                                    
                                 }else{
                                     lowerCard.querySelector('.job-info-button').textContent = 'Non spécifié';
                                     lowerCard.querySelector('.card-job-info-button').textContent = 'Non spécifié';
-                
+                                    
                                 }
                             }else{
                                 lowerCard.querySelector('.job-info-button').textContent = '';
                                 lowerCard.querySelector('.card-job-info-button').textContent = '';
-                
+                                
                             }
-                
+                            
                             if(iterator.contractType.length > 3){
                                 lowerCard.querySelector('.ctType').textContent = iterator.contractType.charAt(0).toUpperCase() + iterator.contractType.slice(1);
                                 lowerCard.querySelector('.card-contract').textContent = iterator.contractType.charAt(0).toUpperCase() + iterator.contractType.slice(1);
-                           
+                                
                             }else{
                                 lowerCard.querySelector('.ctType').textContent = iterator.contractType.toUpperCase();
                                 lowerCard.querySelector('.card-contract').textContent = iterator.contractType.toUpperCase();
                             }
-                
+                            
                             // job begin date
                             let startDate = new Date(iterator.startDate);
                             const month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
@@ -109,9 +112,9 @@ const deploy = {
                             
                             // job description
                             lowerCard.querySelector('.card-description').textContent = iterator.about;
-                
+                            
                             // job requirements
-                
+                            
                             if(iterator.studyLevel == 5){
                                 lowerCard.querySelector('.card-study-requirement').textContent = 'Bac';
                             }
@@ -124,55 +127,65 @@ const deploy = {
                             else if( iterator.studyLevel == 8){
                                 lowerCard.querySelector('.card-study-requirement').textContent = 'Bac + 5';
                             }
-                
+                            
                             lowerCard.querySelector('.try-it').setAttribute('href', "mailto:" + iterator.applyMail);
-                
-                
-                
-                
+                            
+                            
+                            
+                            
                             let container = document.querySelector('.cards-container');
                 
-                
-                                container.appendChild(lowerCard);
-                            }
+                            
+                            container.appendChild(lowerCard);
                         }
-                    }).then
-                    (
-                        function(){
-                            const allLowerCard = document.querySelectorAll('.lower-card-content');
-                            allLowerCard.forEach(element => {
-                                element.addEventListener('click', function(){
-                                    element.classList.toggle('hide');
-                                    const parentElement = element.parentNode;
-                                    parentElement.querySelector('.deployed-card').classList.toggle('hide');
-                                });
+                    }
+                }).then(
+                    function(){
+                        const allLowerCard = document.querySelectorAll('.lower-card-content');
+                        allLowerCard.forEach(element => {
+                            element.addEventListener('click', function(){
+                                element.classList.toggle('hide');
+                                const parentElement = element.parentNode;
+                                parentElement.querySelector('.deployed-card').classList.toggle('hide');
                             });
-                
-                            const allDeployedCard = document.querySelectorAll('.deployed-card');
-                            allDeployedCard.forEach(element => {
-                
-                                element.querySelector('.undeploy-button').addEventListener('click', function(){
-                                    element.classList.toggle('hide');
-                                    const parentElement = element.parentNode;
-                                    parentElement.querySelector('.lower-card-content').classList.toggle('hide');
-                                });
+                        });
+                        
+                        const allDeployedCard = document.querySelectorAll('.deployed-card');
+                        allDeployedCard.forEach(element => {
+                            
+                            element.querySelector('.undeploy-button').addEventListener('click', function(){
+                                element.classList.toggle('hide');
+                                const parentElement = element.parentNode;
+                                parentElement.querySelector('.lower-card-content').classList.toggle('hide');
                             });
-                
+                        });
+                        
                 
                         }
-                    )
-
-
-
-
-          });
-
-          
-
-
-
-    }
-
-
+                        )
+                        
+                        
+                        
+                    ;
+                    
+                    
+                    
+                    
+                    
+                },
+                
+                filterBy: function(){
+                    
+                    const filterBy = document.querySelectorAll('#dropdown-date p');
+                    for (const filter of filterBy) {
+                        filter.addEventListener('click', deploy.handleFilter);
+                    }},
+                    
+                    handleFilter: function(evt){
+                        document.getElementById('current-filter').textContent = evt.target.textContent;
+      deploy.deploy();
+    }  
+    
+    
 }
 document.addEventListener('DOMContentLoaded', deploy.init());

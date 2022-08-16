@@ -394,4 +394,8 @@ const allLowerCard = document.querySelectorAll('.lower-card-container');
       }
     }
   }
+
+  
+  
 }
+

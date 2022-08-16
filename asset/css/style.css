@@ -453,10 +453,39 @@ main {
     display: block;
 }
 
+.drop-btn-date {
+    display: flex;
+    color: #7650E0;
+    background-color: transparent;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-left: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    padding: 0.4rem 1rem 0.4rem 0rem;
+}
+
 .filter-by label{
     font-weight: bold;
     margin-bottom: 0;
 }
+
+.filter-by{
+    display: flex;
+    color: #7650E0;
+    background-color: transparent;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-left: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    padding: 0.4rem 1rem 0.4rem 0rem;
+}
+
 
 #filter-select{
     display: flex;
@@ -471,6 +500,7 @@ main {
     font-weight: bold;
     padding: 0.4rem 1rem 0.4rem 0rem;
 }
+
 
 #filter-select option{
     color: black;
