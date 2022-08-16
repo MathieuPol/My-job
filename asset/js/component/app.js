@@ -58,23 +58,30 @@ fetch("asset/data/data.json")
             if(iterator.remoteWork !== 'none'){
                 if(iterator.remoteWork == 'full'){
                     lowerCard.querySelector('.job-info-button').textContent = 'Télétravail total';
+                    lowerCard.querySelector('.job-info-button').classList.add('display-tele-total');
+
                     lowerCard.querySelector('.card-job-info-button').textContent = 'Télétravail total';
+                    lowerCard.querySelector('.card-job-info-button').classList.add('display-tele-total');
                 }else if(iterator.remoteWork == 'regularly'){
                     lowerCard.querySelector('.job-info-button').textContent = 'Télétravail partiel';
+                    lowerCard.querySelector('.job-info-button').classList.add('display-tele-partiel');
+
                     lowerCard.querySelector('.card-job-info-button').textContent = 'Télétravail partiel';
+                    lowerCard.querySelector('.card-job-info-button').classList.add('display-tele-partiel');
 
                 }else if(iterator.remoteWork == 'eventually'){
                     lowerCard.querySelector('.job-info-button').textContent = 'Télétravail ponctuel';
+                    lowerCard.querySelector('.job-info-button').classList.add('display-tele-ponctu');
                     lowerCard.querySelector('.card-job-info-button').textContent = 'Télétravail ponctuel';
+                    lowerCard.querySelector('.card-job-info-button').classList.add('display-tele-ponctu');
 
                 }else{
-                    lowerCard.querySelector('.job-info-button').textContent = 'Non spécifié';
-                    lowerCard.querySelector('.card-job-info-button').textContent = 'Non spécifié';
-
+                    lowerCard.querySelector('.job-info-button').classList.add('hide');
+                    lowerCard.querySelector('.card-job-info-button').classList.add('hide');
                 }
             }else{
-                lowerCard.querySelector('.job-info-button').textContent = '';
-                lowerCard.querySelector('.card-job-info-button').textContent = '';
+                lowerCard.querySelector('.job-info-button').classList.add('hide');
+                lowerCard.querySelector('.card-job-info-button').classList.add('hide');
 
             }
 

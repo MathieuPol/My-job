@@ -117,8 +117,6 @@ function handleInputElt(evt){
     filtered.append(filterTpl);
   };
   if (evt.target.checked == false) {
-
-    console.log(evt.target.classList[0]);
     filtered.querySelector(`.${evt.target.getAttribute('id')}`).remove();
     
     const allLowerCard = document.querySelectorAll('.lower-card-container');
