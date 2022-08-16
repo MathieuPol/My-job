@@ -163,15 +163,8 @@ const deploy = {
                 
                         }
                         )
-                        
-                        
-                        
                     ;
-                    
-                    
-                    
-                    
-                    
+
                 },
                 
                 filterBy: function(){
@@ -183,7 +176,12 @@ const deploy = {
                     
                     handleFilter: function(evt){
                         document.getElementById('current-filter').textContent = evt.target.textContent;
-      deploy.deploy();
+                        const filterBy = document.querySelectorAll('#dropdown-date p');
+                        for (const filter of filterBy) {
+                            filter.classList.remove('dropdown-content-date-active');
+                        }
+                        evt.target.classList.add('dropdown-content-date-active');
+                        deploy.deploy();
     }  
     
     

@@ -128,24 +128,24 @@ fetch("asset/data/data.json")
             const allLowerCard = document.querySelectorAll('.lower-card-content');
             allLowerCard.forEach(element => {
                 element.addEventListener('click', function(){
-                    element.classList.toggle('hide');
+                    element.classList.add('.hide');
                     const parentElement = element.parentNode;
-                    parentElement.querySelector('.deployed-card').classList.toggle('hide');
+                    parentElement.querySelector('.deployed-card').classList.toggle('.hide');
                 });
             });
-
+            
             const allDeployedCard = document.querySelectorAll('.deployed-card');
             allDeployedCard.forEach(element => {
-
+                
                 element.querySelector('.undeploy-button').addEventListener('click', function(){
-                    element.classList.toggle('hide');
+                    element.classList.toggle('.hide');
                     const parentElement = element.parentNode;
-                    parentElement.querySelector('.lower-card-content').classList.toggle('hide');
+                    parentElement.querySelector('.lower-card-content').classList.toggle('.hide');
                 });
             });
-
-
-        }
+            
+    
+            }
     )
 
 }

@@ -20,7 +20,7 @@ function myFunction() {
   }
   
   function dropDate(){
-    document.getElementById("dropdown-date").classList.add("show");
+    document.getElementById("dropdown-date").classList.toggle("show");
   }
 
 
@@ -150,10 +150,6 @@ function handleInputElt(evt){
       posteFilter.push(test);
     }
   }
-
-  console.log(modeFilter);
-  console.log(contractFilter);
-  console.log(posteFilter);
 
   
 //*-------------------------
