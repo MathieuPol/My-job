@@ -2,7 +2,7 @@
 
 
 //functions lunching when clicking on the dropdown button
-function myFunction() {
+  function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
     document.getElementsByClassName("filter-poste")[0].classList.add("active-filter");
    }

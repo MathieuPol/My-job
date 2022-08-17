@@ -1,10 +1,6 @@
 const init  = {
     init: function() {
         dataLoad.loadData();
-  /*       deploy.init(); */
-
-
-
     }
 
 }

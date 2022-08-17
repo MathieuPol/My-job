@@ -30,14 +30,14 @@
                 Acceuil
             </li>
             <li class="active">
-                <i class="job-icon">
-                    <svg width="33" height="32" viewbox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
+                    <i class="job-icon">
+                        <svg width="33" height="32" viewbox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M27.0526 8.00004H21.9651C21.7245 6.6064 20.9993 5.34256 19.9175 4.43157C18.8357 3.52058 17.4669 3.021 16.0526 3.021C14.6383 3.021 13.2695 3.52058 12.1878 4.43157C11.106 5.34256 10.3808 6.6064 10.1401 8.00004H5.05261C4.52218 8.00004 4.01347 8.21076 3.6384 8.58583C3.26333 8.9609 3.05261 9.46961 3.05261 10V13H29.0526V10C29.0526 9.46961 28.8419 8.9609 28.4668 8.58583C28.0918 8.21076 27.583 8.00004 27.0526 8.00004ZM3.05261 26V14.5H14.0526V17H18.0526V14.5H29.0526V26C29.0526 26.5305 28.8419 27.0392 28.4668 27.4143C28.0918 27.7893 27.583 28 27.0526 28H5.05261C4.52218 28 4.01347 27.7893 3.6384 27.4143C3.26333 27.0392 3.05261 26.5305 3.05261 26ZM16.0526 5.00004C16.9392 5.00174 17.8003 5.29701 18.5013 5.83976C19.2023 6.3825 19.7039 7.14215 19.9276 8.00004H12.1776C12.4013 7.14215 12.9029 6.3825 13.6039 5.83976C14.305 5.29701 15.166 5.00174 16.0526 5.00004Z"
                             fill="#0E0E2C" />
-                    </svg>
-                </i>
-                Les Jobs
+                        </svg>
+                    </i>
+                    Les Jobs
             </li>
             <li>
                 <i>
@@ -61,6 +61,9 @@
 
     <!-- main content -->
     <main class="main-content">
+        <div class="main-content-header">
+
+
         <div class="profile">
             <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -164,18 +167,6 @@
                 </div>
             </div>
 
-
-<!--             <div class="filter-by">
-
-
-                <label for="filter-select">Trier par:</label>
-
-                <select name="filter-by" id="filter-select">
-                    <option value="Date">Date</option>
-                    <option value="Salaire">Salaire</option>
-                </select>
-            </div> -->
-
             <div class="filter-by">
                 <p class="filter-by-label">Trier par :</p>
                 <div class="dropdown">
@@ -192,109 +183,16 @@
                 </div>
             </div>
 
-
+        </div>
 
         </div>
         <div class="filtered">
 
         </div>
 
-        <!--         <div class="lower-card"> -->
         
         <div class="cards-container">
 
-        </div>
-
-        <!--         </div> -->
-
-        <div class="deployed-card">
-
-            <div class="deployed-card-container">
-                <div class="card-header">
-                    <div class="left-container">
-                        <div class="letter-content">
-
-                            <p class="lower-card-letter">T</p>
-                        </div>
-
-                        <div class="card">
-                            <div class="job-info">
-                                <p class="job-info-label">Dev Fullstack</p>
-                                <button class="job-info-button">
-                                    Télétravail partiel
-                                </button>
-                            </div>
-                            <div class="job-info-location">
-                                <p>Salaire</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right-content undeploy-button">
-                        <p>Réduire</p>
-                        <div class="reduce-container">
-                            <div class="reduce"></div>
-                        </div>
-                            
-                            
-                            
-                            
-                            
-                    </div>
-                </div>
-            </div>
-            <div class="sub-content">
-                <div class="sub-content-left">
-                    <div class="sub-content-left-location sub-content-left-item">
-                        <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1 28C1 27.4477 1.44772 27 2 27H30C30.5523 27 31 27.4477 31 28C31 28.5523 30.5523 29 30 29H2C1.44772 29 1 28.5523 1 28Z" fill="#7650E0"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.58579 4.58579C3.96086 4.21071 4.46957 4 5 4H17C17.5304 4 18.0391 4.21071 18.4142 4.58579C18.7893 4.96086 19 5.46957 19 6V28C19 28.5523 18.5523 29 18 29C17.4477 29 17 28.5523 17 28V6H5V28C5 28.5523 4.55228 29 4 29C3.44772 29 3 28.5523 3 28V6C3 5.46957 3.21071 4.96086 3.58579 4.58579Z" fill="#7650E0"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M17 13C17 12.4477 17.4477 12 18 12H27C27.5304 12 28.0391 12.2107 28.4142 12.5858C28.7893 12.9609 29 13.4696 29 14V28C29 28.5523 28.5523 29 28 29C27.4477 29 27 28.5523 27 28V14H18C17.4477 14 17 13.5523 17 13Z" fill="#7650E0"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10C7 9.44772 7.44772 9 8 9H12C12.5523 9 13 9.44772 13 10C13 10.5523 12.5523 11 12 11H8C7.44772 11 7 10.5523 7 10Z" fill="#7650E0"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9 18C9 17.4477 9.44772 17 10 17H14C14.5523 17 15 17.4477 15 18C15 18.5523 14.5523 19 14 19H10C9.44772 19 9 18.5523 9 18Z" fill="#7650E0"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7 23C7 22.4477 7.44772 22 8 22H12C12.5523 22 13 22.4477 13 23C13 23.5523 12.5523 24 12 24H8C7.44772 24 7 23.5523 7 23Z" fill="#7650E0"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M21 23C21 22.4477 21.4477 22 22 22H24C24.5523 22 25 22.4477 25 23C25 23.5523 24.5523 24 24 24H22C21.4477 24 21 23.5523 21 23Z" fill="#7650E0"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M21 18C21 17.4477 21.4477 17 22 17H24C24.5523 17 25 17.4477 25 18C25 18.5523 24.5523 19 24 19H22C21.4477 19 21 18.5523 21 18Z" fill="#7650E0"/>
-                        </svg>
-                        <p>Tiktok - Paris</p>
-                    </div>
-                    <div class="sub-content-left-contract sub-content-left-item">
-                        <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.65087 4.42871C7.06762 4.01196 7.63285 3.77783 8.22222 3.77783H19.3333C19.628 3.77783 19.9106 3.8949 20.119 4.10327L25.6746 9.65882C25.8829 9.8672 26 10.1498 26 10.4445V26.0001C26 26.5894 25.7659 27.1547 25.3491 27.5714C24.9324 27.9882 24.3671 28.2223 23.7778 28.2223H8.22222C7.63285 28.2223 7.06762 27.9882 6.65087 27.5714C6.23413 27.1547 6 26.5894 6 26.0001V6.00005C6 5.41068 6.23413 4.84545 6.65087 4.42871ZM18.8731 6.00005L8.22222 6.00005L8.22222 26.0001H23.7778V10.9047L18.8731 6.00005Z" fill="#7650E0"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0065 16.0001C11.0065 15.3864 11.504 14.8889 12.1176 14.8889H18.7843C19.3979 14.8889 19.8954 15.3864 19.8954 16.0001C19.8954 16.6137 19.3979 17.1112 18.7843 17.1112H12.1176C11.504 17.1112 11.0065 16.6137 11.0065 16.0001Z" fill="#7650E0"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0065 11.0494C11.0065 10.4358 11.504 9.93831 12.1176 9.93831H18.7843C19.3979 9.93831 19.8954 10.4358 19.8954 11.0494C19.8954 11.6631 19.3979 12.1605 18.7843 12.1605H12.1176C11.504 12.1605 11.0065 11.6631 11.0065 11.0494Z" fill="#7650E0"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0065 20.4445C11.0065 19.8308 11.504 19.3334 12.1176 19.3334H16.5621C17.1757 19.3334 17.6732 19.8308 17.6732 20.4445C17.6732 21.0581 17.1757 21.5556 16.5621 21.5556H12.1176C11.504 21.5556 11.0065 21.0581 11.0065 20.4445Z" fill="#7650E0"/>
-                        </svg>    
-                        <p>CDI</p>
-                    </div>
-                    <div class="sub-content-left-begin sub-content-left-item">
-                        <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16 5C9.92487 5 5 9.92487 5 16C5 22.0751 9.92487 27 16 27C22.0751 27 27 22.0751 27 16C27 9.92487 22.0751 5 16 5ZM3 16C3 8.8203 8.8203 3 16 3C23.1797 3 29 8.8203 29 16C29 23.1797 23.1797 29 16 29C8.8203 29 3 23.1797 3 16Z" fill="#7650E0"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16 8C16.5523 8 17 8.44772 17 9V15H23C23.5523 15 24 15.4477 24 16C24 16.5523 23.5523 17 23 17H16C15.4477 17 15 16.5523 15 16V9C15 8.44772 15.4477 8 16 8Z" fill="#7650E0"/>
-                        </svg>
-                        <p>Début: Séptembre 2022</p>
-                    </div>
-                    <div class="sub-content-left-requirement sub-content-left-item">
-                        <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.04726 13.0252L4.88887 12.9407C4.94441 12.9642 4.99738 12.9925 5.04726 13.0252ZM27.1111 12.9407L26.9527 13.0252C27.0026 12.9925 27.0556 12.9642 27.1111 12.9407Z" fill="#505053"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.4706 3.11765C16.1765 2.96078 15.8235 2.96078 15.5294 3.11765L0.529412 11.1176C0.203548 11.2914 0 11.6307 0 12C0 12.3693 0.203548 12.7086 0.529412 12.8824L3.5 14.4667L5.5 15.5333L15.5294 20.8824C15.8235 21.0392 16.1765 21.0392 16.4706 20.8824L22.5 17.6667V23.9754C20.8601 24.8287 18.7089 25.4998 16 25.4998C9.53199 25.4998 6.2438 21.6738 5.50219 20.6776L5.5 20.6747V15.5333L3.5 14.4667L3.49999 20.6873L3.50001 20.6915C3.50182 21.1195 3.64257 21.5352 3.90098 21.8761C4.8397 23.1354 8.65116 27.4998 16 27.4998C18.5995 27.4998 20.7563 26.9537 22.5 26.1922V30C22.5 30.5523 22.9477 31 23.5 31C24.0523 31 24.5 30.5523 24.5 30V25.1308C26.4607 23.8897 27.6333 22.5009 28.099 21.8761C28.3574 21.5352 28.4982 21.1195 28.5 20.6915L28.5 20.6873V14.4667L26.5 15.5333V20.6748L26.4979 20.6777C26.2148 21.0579 25.5605 21.8506 24.5 22.6854V16.6L26.5 15.5333L28.5 14.4667L31.4706 12.8824C31.7965 12.7086 32 12.3693 32 12C32 11.6307 31.7965 11.2914 31.4706 11.1176L16.4706 3.11765ZM16 5.13333L28.875 12L27.1111 12.9407L26.9527 13.0252L23.5 14.8667L16.4706 11.1176C15.9833 10.8577 15.3775 11.0421 15.1176 11.5294C14.8577 12.0167 15.0421 12.6225 15.5294 12.8824L21.375 16L16 18.8667L5.04726 13.0252L4.88887 12.9407L3.125 12L16 5.13333Z" fill="#7650E0"/>
-                        </svg>    
-                        <p>Bac +2</p>
-                    </div>
-
-                </div>
-                <p>Publié il y a 2 jours</p>
-
-            </div>
-            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, perferendis quidem
-                libero animi natus
-                repellendus laudantium ad aliquid sequi, veritatis corporis culpa ullam dolor omnis excepturi officia
-                ex.
-                Distinctio ratione voluptate, excepturi cumque eaque itaque esse consequatur ab quaerat est, fugit culpa
-                molestiae atque tempore totam architecto corporis eveniet eum.</p>
-            <div class="btn-container">
-
-                <button class="try-it">Postuler</button>
-            </div>
         </div>
 
     </main>
@@ -465,8 +363,8 @@
 
     <script src="asset/js/component/app.js"></script>
     <script src="asset/js/component/dropdown.js"></script>
-    <script src="asset/js/init.js"></script>
     <script src="asset/js/component/card_deployment.js"></script>
+    <script src="asset/js/init.js"></script>
 
 </body>
 
