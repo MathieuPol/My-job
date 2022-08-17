@@ -72,12 +72,6 @@ const deploy = {
                             // salary
                             //const salaryInEuro = new Intl.NumberFormat(iterator.currency , { style: 'currency', currency: 'EUR' }).format(( Math.round(iterator.salary)));
                             let salaryInEuro = Math.round(convertToEur(iterator.currency, iterator.salary));
-                            console.log(Math.round(salaryInEuro));
-                            console.log(salaryInEuro);
-
-
-
-
                            
                             lowerCard.querySelector('.salary').textContent = salaryInEuro + 'K';
                             lowerCard.querySelector('.card-salary').textContent = salaryInEuro + 'K';
