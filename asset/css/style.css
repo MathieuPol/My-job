@@ -1,5 +1,4 @@
 body {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -10,20 +9,18 @@ body {
 
 aside {
     width: 15%;
-    height: 100vh;
+    height: 100%;
     background-color: #7650E0;
     position: fixed;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     color: white;
-
 }
 
 .home-svg-icon {
     width: 50px;
     height: 50px;
-
 }
 
 .img-logo {
@@ -39,15 +36,35 @@ aside ul {
     padding: 0;
 }
 
-.lower-card-container {
+li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+li a:hover {
+    text-decoration: none;
+}
+
+span{
+    text-decoration: none;
+    color: white;
+}
+
+span:hover{
+    text-decoration: none;
+}
+
+.lower-card-content{
     display: flex;
     justify-content: space-between;
-    margin-right: 2rem;
     border: none;
     margin-bottom: 2rem;
     height: 7rem;
     border-radius: 10px;
     background-color: white;
+    width: 100%;
+    cursor: pointer;
 }
 
 i {
@@ -78,6 +95,10 @@ li {
     fill: #7650E0;
 }
 
+.active a span{
+    color: black;
+}
+
 
 
 .btn-logout {
@@ -88,6 +109,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 main {
@@ -108,7 +130,6 @@ main {
     justify-content: space-between;
     margin-top: 2rem;
     align-content: center;
-    margin-right: 2rem;
 }
 
 .job-panel h1 {
@@ -122,6 +143,7 @@ main {
     padding: 0.4rem 1rem 0.4rem 0.8rem;
     border: none;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .job-panel button:hover {
@@ -145,13 +167,24 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-right: 2rem;
+    padding-right: 0;
 
+}
+
+.filter-by-label{
+    font-weight: normal;
 }
 
 .filter-by p {
     margin-bottom: 0rem;
+
 }
+
+.filter-by label{
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
 
 .filtered-content p{
     margin-bottom: 0rem;
@@ -159,6 +192,11 @@ main {
 
 .close{
     cursor: pointer;
+}
+
+#current-filter{
+    font-weight: bold;
+    color: #7650E0;
 }
 
 .drop-btn-date-picture{
@@ -228,9 +266,20 @@ main {
     margin-bottom: 0.8rem;
 }
 
-.job-info-label {
+.card-job-info-label, .job-info-label {
     font-weight: bold;
     margin-bottom: 0;
+}
+
+.salary-label, .card-salary-label {
+    display: inline-block;
+}
+
+.salary, .card-salary {
+    color: #7650E0;
+    font-weight: bold;
+    display: inline;
+    margin-left: 0.2rem;
 }
 
 .right-content {
@@ -249,13 +298,27 @@ main {
 }
 
 .job-info-button{
-    background-color: #F1EEFC;
-    color: #7650E0;
     margin-left: 1rem;
     padding: 0.2rem 0.5rem 0.2rem 0.4rem;
     border: none;
     border-radius: 0.5rem;
 }
+
+.display-tele-ponctu {
+    background-color: #FFF8E5;
+    color: #F0BA1C;
+}
+
+.display-tele-partiel{
+    background-color: #F1EEFC;
+    color: #7650E0;
+}
+
+.display-tele-total{
+    background-color: #E5F3FE;
+    color: #0074FF;
+}
+
 
 .job-info-location{
     display: flex;
@@ -290,7 +353,7 @@ main {
     display: inline-block;
 }
 
-.description {
+.card-description {
     margin-right: 2rem;
     margin-left: 1rem;
 }
@@ -306,15 +369,14 @@ main {
 }
 
 .deployed-card {
-    margin-right: 2rem;
     border: none;
     border-radius: 10px;
     background-color: white;
+    margin-bottom: 2rem;
 
 }
 
 
-/*     box-shadow: 0 0 2em #434343a4; */
 .active-filter{
     border: #7650E0 solid 1px;
 }
@@ -327,6 +389,7 @@ main {
     background-color: white;
     border-radius: 0.5rem;
     padding: 0.4rem 1rem 0.4rem 0.8rem;
+    box-shadow: 0px 4px 13px rgba(67, 67, 67, 0.2);
 }
 
 .filter-label-container p{
@@ -387,7 +450,7 @@ main {
     min-width: 330px;
     border-radius: 0.5rem;
     overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 13px rgba(67, 67, 67, 0.2);
     z-index: 1;
     top: 3rem;
 }
@@ -420,26 +483,60 @@ main {
 }
 
 
-.dropdown-content-date {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    bottom: -6.5rem;
-
-}
-
-.dropdown-content-date a {
+.dropdown-content-date{
     color: black;
-    padding: 12px 16px;
     text-decoration: none;
     display: block;
+    cursor: pointer;
+    font-weight: bold;
+    display: none;
+    position: absolute;
+    border-radius: 0.5rem;
+    background-color: white;
+    box-shadow: 0px 4px 13px rgba(67, 67, 67, 0.2);
+    z-index: 1;
+    right: 0;
+    top: 3rem;
 }
 
+.dropdown-content-date p{
+    padding: 0.5rem 1rem 0.5rem 0.8rem;
+}
+
+.dropdown-content-date p:first-child{
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.dropdown-content-date p:last-child{
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.dropdown-content-date p:hover{
+    background-color: #F1EEFC;
+}
+
+
+.dropdown-content-date-active{
+    color: #7650E0;
+}
+
+
 .drop-btn-date {
+    display: flex;
+    background-color: transparent;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    padding: 0.4rem 0rem 0.4rem 0rem;
+}
+
+#filter-select{
     display: flex;
     color: #7650E0;
     background-color: transparent;
@@ -453,15 +550,9 @@ main {
     padding: 0.4rem 1rem 0.4rem 0rem;
 }
 
-.dropdown-content-date {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    bottom: -6.5rem;
+
+#filter-select option{
+    color: black;
 }
 
 .show {
@@ -490,6 +581,7 @@ main {
     display: flex;
     justify-content: flex-end;
     margin-top: 4rem;
+    margin-right: 0;
 }
 
 .profile svg {
@@ -535,6 +627,15 @@ main {
     color: #7650E0;
 }
 
+.card-letter {
+    margin-bottom: 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 44.57px;
+    color: #7650E0;
+}
+
 .card-header{
     display: flex;
     justify-content: space-between;
@@ -552,6 +653,7 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
 }
 
 .undeploy-button p{
@@ -559,7 +661,6 @@ main {
 }
 
 .reduce-container{
-
     width: 1rem;
     height: 1rem;
     display: flex;
@@ -568,6 +669,7 @@ main {
     margin-left: 1rem;
     border: #7650E0 solid 1px;
     border-radius: 50%;
+    cursor: pointer;
 
 }
 
@@ -639,3 +741,31 @@ main {
 .hide{
     display: none;
 }
+
+/* Animation content */
+
+.cards-container{
+    position: relative;
+    animation: content;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes content{
+    0% {top: 10rem;}
+    100% {top: 0px;}
+  }
+
+.main-content-header{
+    position: relative;
+    animation: header;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes header{
+    0% {top: -10rem;}
+    100% {top: 0px;}
+  }
+
+    
