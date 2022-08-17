@@ -1,12 +1,15 @@
+//const fx = require("./monney");
+
 const deploy = {
     init: function () {
         deploy.filterBy();
         deploy.deploy();
-    },
 
+    },
+    
     deploy: function () {
         const selectElt = document.querySelector('#current-filter');
-
+        
         document.querySelector('.cards-container').innerHTML = '';
         
         fetch("asset/data/data.json")
@@ -31,7 +34,6 @@ const deploy = {
                         }
                         data.sort(sortBySalary);
                     }
-                    
                     
                     for (const iterator of data) {
                         if (iterator.isActive == true) {
@@ -68,9 +70,17 @@ const deploy = {
                             
                             
                             // salary
-                            const salaryInEuro = new Intl.NumberFormat(iterator.currency , { style: 'currency', currency: 'EUR' }).format(( Math.round(iterator.salary * 261 / 1000)));
-                            lowerCard.querySelector('.salary').textContent = salaryInEuro.split(',')[0] + 'K';
-                            lowerCard.querySelector('.card-salary').textContent = salaryInEuro.split(',')[0] + 'K';
+                            //const salaryInEuro = new Intl.NumberFormat(iterator.currency , { style: 'currency', currency: 'EUR' }).format(( Math.round(iterator.salary)));
+                            let salaryInEuro = Math.round(convertToEur(iterator.currency, iterator.salary));
+                            console.log(Math.round(salaryInEuro));
+                            console.log(salaryInEuro);
+
+
+
+
+                           
+                            lowerCard.querySelector('.salary').textContent = salaryInEuro + 'K';
+                            lowerCard.querySelector('.card-salary').textContent = salaryInEuro + 'K';
                             
                             // job mode
                             if(iterator.remoteWork !== 'none'){

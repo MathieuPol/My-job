@@ -1,3 +1,4 @@
+
 //With this method I load json data and display only the active one
 const dataLoad = {
 
@@ -48,9 +49,14 @@ fetch("asset/data/data.json")
             lowerCard.querySelector('.compagny').textContent = iterator.company.charAt(0) + iterator.company.slice(1).toLowerCase() + ' - ' + iterator.city;
             lowerCard.querySelector('.card-compagny').textContent = iterator.company.charAt(0) + iterator.company.slice(1).toLowerCase() + ' - ' + iterator.city;
 
-
             // salary
-            const salaryInEuro = new Intl.NumberFormat(iterator.currency , { style: 'currency', currency: 'EUR' }).format(( Math.round(iterator.salary * 261 / 1000)));
+/* 
+            salaryInEuro = fx.convert(iterator.salary, {from: iterator.currency , to: 'EUR'});
+            console.log(salaryInEuro);
+            console.log(iterator.salary); */
+            const salaryInEuro = new Intl.NumberFormat(iterator.currency , { style: 'currency', currency: 'EUR' }).format(( Math.round(iterator.salary)));
+
+
             lowerCard.querySelector('.salary').textContent = salaryInEuro.split(',')[0] + 'K';
             lowerCard.querySelector('.card-salary').textContent = salaryInEuro.split(',')[0] + 'K';
 
