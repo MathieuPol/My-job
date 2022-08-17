@@ -1,5 +1,4 @@
 body {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -10,14 +9,13 @@ body {
 
 aside {
     width: 15%;
-    height: 100vh;
+    height: 100%;
     background-color: #7650E0;
     position: fixed;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     color: white;
-
 }
 
 .home-svg-icon {
@@ -38,6 +36,24 @@ aside ul {
     padding: 0;
 }
 
+li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+li a:hover {
+    text-decoration: none;
+}
+
+span{
+    text-decoration: none;
+    color: white;
+}
+
+span:hover{
+    text-decoration: none;
+}
 
 .lower-card-content{
     display: flex;
@@ -79,6 +95,10 @@ li {
     fill: #7650E0;
 }
 
+.active a span{
+    color: black;
+}
+
 
 
 .btn-logout {
@@ -89,6 +109,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 main {
@@ -746,3 +767,5 @@ main {
     0% {top: -10rem;}
     100% {top: 0px;}
   }
+
+    
