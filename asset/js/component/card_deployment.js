@@ -179,7 +179,10 @@ const deploy = {
                     ;
 
                 },
-                
+//*********************************************************************************************************************** */
+//* For data or salary filter I need to reload data from the loader.
+//* Depending the activated one the load will be different.
+//*********************************************************************************************************************** */
                 filterBy: function(){
                     
                     const filterBy = document.querySelectorAll('#dropdown-date p');
