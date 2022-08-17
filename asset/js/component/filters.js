@@ -65,6 +65,8 @@ function handleInputElt(evt){
 //*-------------------------
 const allLowerCard = document.querySelectorAll('.lower-card-container');
 
+
+//display card with filter corresponding
 if (modeFilter.length > 0) {
     for (const card of allLowerCard) {
       card.style.display = 'none';
