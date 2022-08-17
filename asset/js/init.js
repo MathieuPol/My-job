@@ -1,7 +1,7 @@
-const init  = {
+/* const init  = {
     init: function() {
         dataLoad.loadData();
     }
 
 }
-document.addEventListener('DOMContentLoaded', init.init());
+document.addEventListener('DOMContentLoaded', init.init()); */
