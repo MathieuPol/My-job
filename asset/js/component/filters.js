@@ -163,7 +163,6 @@ const filter = {
               if (card.querySelector('.ctType').textContent == contractIterator.querySelector('.working-duration p').textContent) {
                 for (const postIterator of posteFilter) {
                   if (card.querySelector('.job-info-label').textContent == postIterator.querySelector('.filtered-content p').textContent) {
-                    console.log("ok");
                     card.style.display = 'flex';
                   }
                 }
