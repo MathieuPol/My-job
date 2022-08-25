@@ -7,7 +7,7 @@ const deploy = {
 
     },
 
-    deploy: async function () {
+    deploy: function () {
         const selectElt = document.querySelector('#current-filter');
 
         document.querySelector('.cards-container').innerHTML = '';
@@ -143,7 +143,6 @@ const deploy = {
                             }
 
                             lowerCard.querySelector('.try-it').setAttribute('href', "mailto:" + iterator.applyMail);
-
 
 
 
@@ -305,11 +304,6 @@ const deploy = {
             })
 
 
-
-
-
-
-
     },
     //*********************************************************************************************************************** */
     //* For data or salary filter I need to reload data from the loader.
@@ -334,9 +328,4 @@ const deploy = {
     },
 
     //*-------------------------
-
-
-
-
 }
-document.addEventListener('DOMContentLoaded', deploy.init());
