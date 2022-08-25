@@ -1,4 +1,5 @@
 //Dropdown button manager
+//Cannot be put in module cause it's used in html default function
 
 //functions lunching when clicking on the dropdown button
   function myFunction() {

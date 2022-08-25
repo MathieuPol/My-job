@@ -1,7 +1,8 @@
-/* const init  = {
+ // On after html loading, execute the function 
+ const init  = {
     init: function() {
-        dataLoad.loadData();
+        deploy.init();
+        filter.init();
     }
-
 }
-document.addEventListener('DOMContentLoaded', init.init()); */
+document.addEventListener('DOMContentLoaded', init.init());

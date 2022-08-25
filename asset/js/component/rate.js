@@ -1,3 +1,5 @@
+//Currency converter
+
 function convertToEur(currency, amount){
 
     let rub = 0.016;

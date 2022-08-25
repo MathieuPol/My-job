@@ -206,4 +206,3 @@ const deploy = {
     
     
 }
-document.addEventListener('DOMContentLoaded', deploy.init());
