@@ -768,7 +768,7 @@ main {
     100% {top: 0px;}
   }
 
-<<<<<<< HEAD
+
 /* Media query */ 
 @media screen and ( max-width: 1000px) {
     body{
@@ -788,6 +788,7 @@ main {
     aside ul{
         display: flex;
         margin: 0;
+        justify-content: space-around;
     }
 
     .img-logo{
@@ -849,6 +850,3 @@ main {
         margin-left: 0;
     }
 }
-=======
-    
->>>>>>> parent of 764f3c7 (Merge pull request #3 from MathieuPol/deployed-card)
