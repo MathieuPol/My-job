@@ -144,10 +144,7 @@ const deploy = {
 
                             lowerCard.querySelector('.try-it').setAttribute('href', "mailto:" + iterator.applyMail);
 
-
-
                             let container = document.querySelector('.cards-container');
-
 
                             container.appendChild(lowerCard);
                         }
