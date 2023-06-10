@@ -199,6 +199,19 @@ main {
     color: #7650E0;
 }
 
+.dropbtn {
+    background-color: white;
+    color: black;
+    padding: 0.4rem 1rem 0.4rem 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 1rem;
+}
+
 .drop-btn-date-picture{
     width: 1.2rem;
     align-self: center;

@@ -2,9 +2,16 @@
 
 //functions lunching when clicking on the dropdown button
 function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-  document.getElementsByClassName("filter-poste")[0].classList.toggle("active-filter");
- }
+  const dropDown = document.getElementById("myDropdown");
+  const postSelector = document.getElementsByClassName("filter-poste")[0];
+  if (postSelector.classList.contains("active-filter")) {
+    postSelector.classList.remove("active-filter");
+    dropDown.classList.remove("show");
+  } else {
+    postSelector.classList.add("active-filter");
+    dropDown.classList.add("show");
+  }
+}
 
 function dropContract() {
   document.getElementById("dropdown-contract").classList.toggle("show");
