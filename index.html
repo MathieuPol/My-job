@@ -98,8 +98,8 @@
                     <div>
                         <button onclick="myFunction()" class="dropbtn filter-label-container filter-poste">
                             Poste
-                            <svg   width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.58328 10.583C6.36077 9.80559 7.6213 9.80575 8.39891 10.583L16 18.1845L23.601 10.5834C24.3786 9.80613 25.639 9.80587 26.4165 10.5832C27.1945 11.3607 27.1945 12.6218 26.4165 13.3994L17.4075 22.4086C17.0188 22.797 16.5084 22.9912 16 22.9912C15.4912 22.9912 14.9807 22.7964 14.5923 22.4082L5.58321 13.399C4.80561 12.6214 4.80556 11.3605 5.58328 10.583Z" fill="#0E0E2C"/>
+                            <svg class="poste__svg" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="poste__svg__path" d="M5.58328 10.583C6.36077 9.80559 7.6213 9.80575 8.39891 10.583L16 18.1845L23.601 10.5834C24.3786 9.80613 25.639 9.80587 26.4165 10.5832C27.1945 11.3607 27.1945 12.6218 26.4165 13.3994L17.4075 22.4086C17.0188 22.797 16.5084 22.9912 16 22.9912C15.4912 22.9912 14.9807 22.7964 14.5923 22.4082L5.58321 13.399C4.80561 12.6214 4.80556 11.3605 5.58328 10.583Z" fill="#0E0E2C"/>
                             </svg>
                         </button>
                     </div>
@@ -124,15 +124,18 @@
                         </fieldset>
                     </div>
                 </div>
-
+                
                 <div class="dropdown">
-                    <div class="filter-label-container filter-contract">
-                        <p>Contrat</p>
-                        <svg  onclick="dropContract()" class="dropBtnContract" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.58328 10.583C6.36077 9.80559 7.6213 9.80575 8.39891 10.583L16 18.1845L23.601 10.5834C24.3786 9.80613 25.639 9.80587 26.4165 10.5832C27.1945 11.3607 27.1945 12.6218 26.4165 13.3994L17.4075 22.4086C17.0188 22.797 16.5084 22.9912 16 22.9912C15.4912 22.9912 14.9807 22.7964 14.5923 22.4082L5.58321 13.399C4.80561 12.6214 4.80556 11.3605 5.58328 10.583Z" fill="#0E0E2C"/>
-                        </svg>
+                    <div>
+                        <button onclick="dropContract()" class="dropbtn filter-label-container filter-contract dropBtnContract">
+                            Contrat
+                            <svg width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.58328 10.583C6.36077 9.80559 7.6213 9.80575 8.39891 10.583L16 18.1845L23.601 10.5834C24.3786 9.80613 25.639 9.80587 26.4165 10.5832C27.1945 11.3607 27.1945 12.6218 26.4165 13.3994L17.4075 22.4086C17.0188 22.797 16.5084 22.9912 16 22.9912C15.4912 22.9912 14.9807 22.7964 14.5923 22.4082L5.58321 13.399C4.80561 12.6214 4.80556 11.3605 5.58328 10.583Z" fill="#0E0E2C"/>
+                            </svg>
+                        </button>
+
                     </div>
-                    <div id="dropdown-contract" class="dropdown-content-contract">
+                    <div id="dropdown-contract" class="dropdown-content">
                         <fieldset class="fieldset">
                             <div>
                               <input class="working-duration" type="checkbox" id="cdd" name="CDD">
@@ -150,13 +153,15 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <div class="filter-label-container filter-mode">
-                        <p>Télétravail</p>
-                        <svg  onclick="dropMode()" class="dropBtnMode" width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.58328 10.583C6.36077 9.80559 7.6213 9.80575 8.39891 10.583L16 18.1845L23.601 10.5834C24.3786 9.80613 25.639 9.80587 26.4165 10.5832C27.1945 11.3607 27.1945 12.6218 26.4165 13.3994L17.4075 22.4086C17.0188 22.797 16.5084 22.9912 16 22.9912C15.4912 22.9912 14.9807 22.7964 14.5923 22.4082L5.58321 13.399C4.80561 12.6214 4.80556 11.3605 5.58328 10.583Z" fill="#0E0E2C"/>
-                        </svg>
+                    <div>
+                        <button onclick="dropMode()" class="dropbtn filter-label-container filter-mode dropBtnContract dropBtnMode">
+                            Télétravail
+                            <svg  width="32" height="32" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.58328 10.583C6.36077 9.80559 7.6213 9.80575 8.39891 10.583L16 18.1845L23.601 10.5834C24.3786 9.80613 25.639 9.80587 26.4165 10.5832C27.1945 11.3607 27.1945 12.6218 26.4165 13.3994L17.4075 22.4086C17.0188 22.797 16.5084 22.9912 16 22.9912C15.4912 22.9912 14.9807 22.7964 14.5923 22.4082L5.58321 13.399C4.80561 12.6214 4.80556 11.3605 5.58328 10.583Z" fill="#0E0E2C"/>
+                            </svg>
+                        </button>
                     </div>
-                    <div id="dropdown-mode" class="dropdown-content-mode">
+                    <div id="dropdown-mode" class="dropdown-content">
                         <fieldset class="fieldset">
                             <div>
                               <input class="working-mode"  type="checkbox" id="tele-partiel" name="Télétravail partiel">

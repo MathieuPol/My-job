@@ -2,101 +2,60 @@
 
 //functions lunching when clicking on the dropdown button
 function myFunction() {
+  this.closeDropDown();
   const dropDown = document.getElementById("myDropdown");
   const postSelector = document.getElementsByClassName("filter-poste")[0];
   if (postSelector.classList.contains("active-filter")) {
+    console.log("");
     postSelector.classList.remove("active-filter");
     dropDown.classList.remove("show");
   } else {
+    console.log("active");
     postSelector.classList.add("active-filter");
     dropDown.classList.add("show");
   }
 }
 
 function dropContract() {
+  this.closeDropDown();
   document.getElementById("dropdown-contract").classList.toggle("show");
   document.getElementsByClassName("filter-contract")[0].classList.toggle("active-filter");
 
 }
 
 function dropMode() {
+  this.closeDropDown();
   document.getElementById("dropdown-mode").classList.toggle("show");
   document.getElementsByClassName("filter-mode")[0].classList.toggle("active-filter");
 
 }
 
 function dropDate(){
+  this.closeDropDown();
   document.getElementById("dropdown-date").classList.toggle("show");
 }
 
-
-//Listen for clicks in drop button and input
-window.onclick = function(event) {
-  //if there is a dropdown menu open and the user clicks outside of it, close it
-  if (!event.target.matches('.dropBtnMode')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content-mode");
-    let filterPost = document.getElementsByClassName("filter-mode")[0];
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      //before closing it we listen the input to avoid to close it when the user is typing in the input
-      if(event.target.matches('input'))
-      {
-      }
-      else{
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-          filterPost.classList.remove('active-filter');
-        }
-      }
-    }
+function closeDropDown(){
+  const activeDropDown = document.querySelector(".active-filter");
+  const allDropDown = document.querySelectorAll(".dropdown-content");
+  if(activeDropDown != null){
+    allDropDown.forEach(element => {
+      element.classList.remove("show");
+    });
+    activeDropDown.classList.remove("active-filter");
   }
-  if (!event.target.matches('.dropBtnContract')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content-contract");
-      let filterPost = document.getElementsByClassName("filter-contract")[0];
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-
-        if(event.target.matches('input'))
-        {
-        }
-        else{
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-            filterPost.classList.remove('active-filter');
-          }
-        }
-
-      }
-    }
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      let filterPost = document.getElementsByClassName("filter-poste")[0];
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if(event.target.matches('input'))
-        {
-        }
-        else{
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-            filterPost.classList.remove('active-filter');
-            
-          }
-        }
-      }
-    }
-    if (!event.target.matches('.dropBtnDate')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content-date");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
 }
 
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  console.log(event.target);
+  if (!event.target.matches('button') && !event.target.matches('input')) {
+    this.closeDropDown();
+  }
+  if (event.target.matches('svg')) {
+    event.target.parentNode.click();
+  }
+  if (event.target.matches('path')) {
+    event.target.parentNode.parentNode.click();
+  }
+}
